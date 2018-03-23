@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var express = require('express');
+var swaggerUi = require('swagger-ui-dist');
 
 var favIconHtml = '<link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />' +
                   '<link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />'
@@ -63,8 +64,8 @@ function swaggerInitFn (req, res, next) {
 }
 
 
-var serve = [swaggerInitFn, express.static(__dirname + '/static')];
-var serveWithOptions = options => [swaggerInitFn, express.static(__dirname + '/static', options)];
+var serve = [swaggerInitFn, express.static('/static', swaggerUi.getAbsoluteFSPath())];
+var serveWithOptions = options => [swaggerInitFn, express.static('/static', swaggerUi.getAbsoluteFSPath(), options)];
 
 var stringify = function (obj, prop) {
   var placeholder = '____FUNCTIONPLACEHOLDER____';

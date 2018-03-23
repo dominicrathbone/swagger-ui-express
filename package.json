@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/scottie1984/swagger-ui-express/issues"
   },
-  "homepage": "https://github.com/scottie1984/swagger-ui-express"
+  "homepage": "https://github.com/scottie1984/swagger-ui-express",
+  "dependencies": {
+    "swagger-ui-dist": "3.13.0"
+  }
 }
